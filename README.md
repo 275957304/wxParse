@@ -10,14 +10,17 @@
 **二，配置文件**
 
 首先在xx.wxml导入文件，在文件头写上：
+
 <import src="../../wxParse/wxParse.wxml"/>
 
 然后再wxss导入文件，在文件头写上：
+
 @import "../../wxParse/wxParse.wxss";
 
 **三，在页面xx.js里的onLoad()方法里面写上：**
 
 var WxParse = require('../../wxParse/wxParse.js');
+
 WxParse.wxParse('content', 'html', content, that,5)
  
 此方法的含义为：
