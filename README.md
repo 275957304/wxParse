@@ -33,6 +33,30 @@ var article = '<div>我是HTML代码</div>';/**
 */var that = this;
 WxParse.wxParse('article', 'html', article, that, 5);
 
+
+Page({
+  data: {
+  },
+  onLoad: function () {
+    var that = this;
+    wx.request({
+        url: '', 
+        method: 'POST',
+        data: {
+            'id':13
+        },
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+            var article = res.data[0].post;
+            WxParse.wxParse('article', 'html', article, that,5);
+        }
+    })
+  }
+})
+
+
 ```
 
 四，在页面中引用模板
