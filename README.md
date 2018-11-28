@@ -85,3 +85,14 @@ console.dir(value);
 可能是console.dir()方法在微信无法支持，将其注释掉或者改为console.log()方法，问题解决。
 
 
+
+**空格解析不生效**
+
+修改wxDiscode.js文件的strcharacterDiscode方法中
+```
+str = str.replace(/&nbsp;/g, ' ');
+```
+替换为
+```
+str = str.replace(/&nbsp;/g, '\xa0');
+```
